@@ -7,6 +7,14 @@ call vundle#begin()
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 
+""vim-react-snippets:
+Plugin 'julianitor/vim-react-es6-snippets'
+
+" SnipMate and its dependencies:
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+
 
 Plugin 'sjl/gundo.vim'
 nnoremap <F5> :GundoToggle<CR>
@@ -165,7 +173,7 @@ set background=dark
 colorscheme default
 
 "gundo.vim
-nnoremap U :GundoToggle<CR>
+"nnoremap U :GundoToggle<CR>
 
 "Emacs-style movement keys (ala bash)
 :cnoremap <C-a>  <Home>
@@ -220,3 +228,18 @@ autocmd BufWritePre * :%s/\s\+$//e
 " JS goodies
 let javascript_enable_domhtmlcss = 1
 let g:syntastic_check_on_open=1
+
+" Auto bracket setting
+:inoremap ( ()<Esc>i
+:inoremap { {}<Esc>i
+:inoremap [ []<Esc>i
+:inoremap ' ''<Esc>i
+:inoremap " ""<Esc>i
+:inoremap ` ``<Esc>i
+
+"Late bracketing
+:vnoremap _( <Esc>`>a)<Esc>`<i(<Esc>
+:vnoremap _{ <Esc>`>a}<Esc>`<i{<Esc>
+:vnoremap _[ <Esc>`>a]<Esc>`<i[<Esc>
+:vnoremap _' <Esc>`>a'<Esc>`<i'<Esc>
+:vnoremap _" <Esc>`>a"<Esc>`<i"<Esc>
